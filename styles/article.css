@@ -1,0 +1,38 @@
+section {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section figure {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+section p {
+    text-align: justify;
+    font-size: 1.2rem;
+}
+
+section figure img {
+    width: 200px;
+}
+
+section figure figcaption {
+    text-align: center;
+}
+
+section h3 {
+    width: 100%;
+    text-align: start;
+    font-weight: normal;
+    background-color: gainsboro;
+    padding: 8px 1rem;
+    border-left: 8px solid gray;
+}

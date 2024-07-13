@@ -1,0 +1,130 @@
+/* css reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* variables */
+
+:root {
+    --bg-primary: #092651;
+    --bg-secondary: #3e86f1;
+    --bg-light: #f8f8f8;
+    --txt-dark: #171719;
+    --txt-light: #f7f4f0;
+}
+
+/* body */
+
+body {
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--bg-light);
+    padding-bottom: 5rem;
+}
+
+/* header */
+
+header {
+    width: 100%;
+    background-color: var(--bg-primary);
+    color: var(--txt-light);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+#toggle-lang {
+    padding: 8px 1rem;
+    outline: unset;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    appearance: none;
+    border: unset;
+    border-right: 10px solid var(--bg-secondary);
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+header a {
+    color: inherit;
+    font-size: 1.2rem;
+}
+
+header li {
+    padding: 8px 1rem;
+    border-radius: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+header li:hover,
+header li.active {
+    background-color: var(--bg-secondary);
+}
+
+/* section */
+
+section {
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    background-color: var(--bg-light);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+main > h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    text-decoration: underline;
+    margin: 4rem 0;
+}
+
+/* text toggle */
+
+.text {
+    display: none;
+}
+
+.text.active {
+    display: block;
+}
+
+
+/* footer */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background-color: var(--bg-primary);
+    color: var(--txt-light);
+    font-size: 1.2rem;
+}
+
+footer img {
+    transform: translateY(6px);
+}
