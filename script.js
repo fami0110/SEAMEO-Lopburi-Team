@@ -3,3 +3,7 @@ $('#toggle-lang').on('change', function() {
     $('.text').hide();
     $(`.text.${id}`).fadeIn();
 });
+
+$('header .menu').on('click', function() {
+    $('header .menu').toggleClass('active');
+});

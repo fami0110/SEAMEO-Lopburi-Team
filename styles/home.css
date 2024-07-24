@@ -1,7 +1,3 @@
-section {
-    flex-direction: column;
-}
-
 .container {
     display: flex;
     gap: 2rem;
@@ -44,4 +40,23 @@ article:first-of-type h2 {
 article:first-of-type h3 {
     font-size: 1rem;
     color: orange;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 800px) {
+    section {
+        padding: 4rem 2rem;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    article:last-of-type {
+        border-left: unset;
+        border-top: 1px solid black;
+        padding-left: unset;
+        padding-top: 2rem;
+    }
 }

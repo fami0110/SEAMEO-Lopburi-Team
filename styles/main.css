@@ -7,6 +7,7 @@
     list-style: none;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
+    /* outline: 1px solid red; */
 }
 
 /* variables */
@@ -24,13 +25,16 @@
 body {
     min-height: 100vh;
     position: relative;
+    overflow-x: hidden;
     background-color: var(--bg-light);
-    padding-bottom: 5rem;
+    padding: 5rem 0;
 }
 
 /* header */
 
 header {
+    position: fixed;
+    top: 0;
     width: 100%;
     background-color: var(--bg-primary);
     color: var(--txt-light);
@@ -79,6 +83,51 @@ header li.active {
     background-color: var(--bg-secondary);
 }
 
+header .menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+.menu span {
+    display: block;
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--txt-light);
+    border-radius: 2px;
+    transition:
+        top 0.3s ease 0.3s,
+        width 0.3s ease 0.3s,
+        transform 0.3s ease;
+}
+
+.menu.active span:nth-of-type(1) {
+    top: 8px;
+    transform: rotate(45deg);
+    transition:
+        top 0.3s ease,
+        transform 0.3s ease 0.3s;
+}
+
+.menu.active span:nth-of-type(2) {
+    width: 0;
+    transition:
+        width 0.3s ease;
+}
+
+.menu.active span:nth-of-type(3) {
+    top: -8px;
+    transform: rotate(-45deg);
+    transition:
+        top 0.3s ease,
+        transform 0.3s ease 0.3s;
+}
+
 /* section */
 
 section {
@@ -91,7 +140,7 @@ section {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-main > h2 {
+main>h2 {
     font-size: 2.5rem;
     text-align: center;
     text-decoration: underline;
@@ -127,4 +176,41 @@ footer {
 
 footer img {
     transform: translateY(6px);
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 800px) {
+
+    header nav {
+        gap: 1.5rem;
+    }
+
+    header .menu {
+        display: flex;
+    }
+
+    header ul {
+        position: absolute;
+        flex-direction: column;
+        gap: 0;
+        background-color: #8ab5f7;
+        top: 100%;
+        right: -150px;
+        transition: right 0.3s ease;
+    }
+
+    header .menu.active ~ ul {
+        right: 0;
+    }
+
+    header li {
+        border-radius: 0;
+        padding: 1rem 3rem;
+    }
+
+    header li:hover {
+        background-color: #1759bd;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
 }
