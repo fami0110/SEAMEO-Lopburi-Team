@@ -11,6 +11,29 @@ article:first-of-type {
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
+}
+
+article:first-of-type::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.6rem;
+    height: 1.2rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border: 6px solid var(--bg-secondary);
+    border-radius: 6px;
+}
+
+.flag-id:first-of-type::after {
+    background-image: url(../assets/id.svg);
+}
+
+.flag-th:first-of-type::after {
+    background-image: url(../assets/th.svg);
 }
 
 article:first-of-type img {
@@ -46,7 +69,11 @@ article:first-of-type h3 {
 
 @media only screen and (max-width: 800px) {
     section {
-        padding: 4rem 2rem;
+        padding: 3rem 1.2rem;
+    }
+
+    article:first-of-type::after {
+        top: -1.5rem;
     }
 
     .container {
